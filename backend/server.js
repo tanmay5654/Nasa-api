@@ -7,7 +7,10 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 const NASA_API_KEY = process.env.NASA_API_KEY;
 
-app.use(cors());
+// ✅ Allow only specific origin (your deployed frontend)
+app.use(cors({
+  origin: 'https://nasa-api-sigma-lyart.vercel.app'
+}));
 
 app.get('/api/apod', async (req, res) => {
   try {

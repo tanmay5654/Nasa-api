@@ -6,7 +6,7 @@ const NasaData = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:5001/api/apod')
+    axios.get('https://nasa-api-aeiq.vercel.app/api/apod')
       .then(res => {
         setData(res.data);
         setLoading(false);
